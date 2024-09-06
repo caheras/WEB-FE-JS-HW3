@@ -24,5 +24,3 @@ Explanation of the async/await syntax, which simplifies working with promises by
 
 ### 5. Event Loop
 A description of how the JavaScript event loop works, processing tasks from the call stack and the callback queue to handle asynchronous tasks.
-
-## File Structure
