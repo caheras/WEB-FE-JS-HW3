@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript Concepts Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="img\logo.svg" alt="JavaScript Logo">
+        <h1>Understanding JavaScript</h1>
+    </header>
+
+    <section id="async">
+        <h2>JavaScript Async</h2>
+        <p>In JavaScript, asynchronous programming allows the engine to execute other tasks while waiting for a particular operation to complete. This avoids blocking the execution of the program and enhances performance.</p>
+        <pre><code>
+// Asynchronous code using setTimeout
+console.log('Start');
+setTimeout(() => {
+    console.log('This is asynchronous!');
+}, 2000);
+console.log('End');
+        </code></pre>
+    </section>
+
+    <section id="callback">
+        <h2>Callback</h2>
+        <p>A callback is a function passed into another function as an argument, which is then invoked inside the outer function to complete a task.</p>
+        <pre><code>
+// Simple callback function
+function fetchData(callback) {
+    console.log('Fetching data...');
+    setTimeout(() => {
+        callback('Data received');
+    }, 2000);
+}
+
+function displayData(data) {
+    console.log(data);
+}
+
+fetchData(displayData);
+        </code></pre>
+    </section>
+
+    <section id="promise">
+        <h2>Promise</h2>
+        <p>A Promise in JavaScript represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises are used to handle asynchronous code in a more readable manner.</p>
+        <pre><code>
+// Promise example
+let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise resolved');
+    }, 2000);
+});
+
+myPromise.then(value => {
+    console.log(value);
+});
+        </code></pre>
+    </section>
+
+    <section id="async-await">
+        <h2>Async/Await</h2>
+        <p>Async/Await is a syntactic sugar built on top of Promises, making asynchronous code easier to write and understand. The 'await' keyword waits for a Promise to resolve.</p>
+        <pre><code>
+// Async/Await example
+async function fetchData() {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Data fetched!"), 2000);
+    });
+
+    let result = await promise;
+    console.log(result);
+}
+
+fetchData();
+        </code></pre>
+    </section>
+
+    <section id="event-loop">
+        <h2>Event Loop</h2>
+        <p>The Event Loop is a mechanism in JavaScript that handles asynchronous tasks by continuously monitoring the call stack and callback queue, executing callbacks when the call stack is empty.</p>
+        <pre><code>
+// Event Loop example
+console.log('First');
+setTimeout(() => console.log('Second'), 0);
+console.log('Third');
+        </code></pre>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Inventflix. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
